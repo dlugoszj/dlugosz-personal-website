@@ -1,0 +1,51 @@
+.section-header {
+  position: relative;
+  padding: 6rem 4rem 3rem;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.header-text {
+  text-align: left;
+}
+
+.header-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+
+.header-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+@media (max-width: 768px) {
+  .section-header {
+    padding: 4rem 2rem 2rem;
+  }
+
+  .header-title {
+    font-size: 2rem;
+  }
+
+  .header-subtitle {
+    font-size: 1rem;
+  }
+}
+

@@ -1,0 +1,187 @@
+.project-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--border);
+  padding: 4rem 2rem;
+  transition: all 0.3s ease;
+  display: block;
+  color: inherit;
+  transform: scale(1);
+}
+
+.project-card:not(:first-child) {
+  margin-top: 0;
+  border-top: 2px solid var(--border);
+}
+
+.project-card:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border);
+}
+
+.project-card:hover,
+.project-card.hovered {
+  background: var(--bg-secondary);
+  transform: scale(1.02);
+  border-color: var(--text-primary);
+  border-top-color: var(--text-primary);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+  margin-bottom: 1.5rem;
+}
+
+.project-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.project-description {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.topic-tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: 0;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.topic-tag:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.topic-tag.more {
+  background: transparent;
+  color: var(--text-secondary);
+  border-color: var(--border);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.github-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  background: transparent;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.github-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--text-primary);
+  transition: width 0.2s ease;
+}
+
+.github-button:hover {
+  color: var(--text-primary);
+}
+
+.github-button:hover::after {
+  width: 100%;
+}
+
+.github-button svg {
+  flex-shrink: 0;
+}
+
+.project-stats {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.language-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.stat-text {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    padding: 1.25rem;
+  }
+
+  .project-name {
+    font-size: 1.25rem;
+  }
+
+  .card-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .project-stats {
+    gap: 1rem;
+  }
+
+  .github-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
